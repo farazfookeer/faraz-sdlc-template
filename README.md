@@ -71,4 +71,6 @@ git commit -m "chore: initialise project from SDLC template"
 
 ## Licence
 
-No licence is selected by this starter. Add one appropriate to the project before distributing it.
+This template is available under the [MIT Licence](LICENSE). Projects created
+from it may retain the licence or replace it with terms appropriate to their
+own distribution model.
