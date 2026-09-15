@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability
-    url: https://github.com/OWNER/REPOSITORY/security/advisories/new
-    about: Report security vulnerabilities privately. Replace OWNER/REPOSITORY first.
+    url: https://github.com/farazfookeer/faraz-sdlc-template/security/advisories/new
+    about: Report security vulnerabilities privately.
