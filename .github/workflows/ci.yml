@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # TODO: Add the chosen runtime setup and dependency cache here.
       # Keep install/lint/typecheck/test/build commands in scripts/project-checks.sh
