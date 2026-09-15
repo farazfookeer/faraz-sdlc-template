@@ -1,0 +1,36 @@
+name: CodeQL
+
+# TEMPLATE NOTE:
+# 1. Replace the language matrix with only languages used by the project.
+# 2. Enable the pull_request, push and schedule triggers below.
+# 3. Make this workflow a required check after its first successful run.
+# Keeping it manual prevents an unconfigured, code-free template from reporting
+# a misleading failure. Supported values include javascript-typescript and python.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  packages: read
+
+jobs:
+  analyse:
+    name: Analyse (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [javascript-typescript]
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Initialise CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+      - name: Build automatically
+        uses: github/codeql-action/autobuild@v3
+      - name: Analyse
+        uses: github/codeql-action/analyze@v3

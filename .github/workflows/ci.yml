@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Repository quality gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      # TODO: Add the chosen runtime setup and dependency cache here.
+      # Keep install/lint/typecheck/test/build commands in scripts/project-checks.sh
+      # so local and CI execution cannot drift.
+
+      - name: Run deterministic checks
+        run: make check

@@ -1,0 +1,46 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Logs, coverage, caches and temporary files
+*.log
+coverage/
+.coverage
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tmp/
+tmp/
+
+# JavaScript / TypeScript
+node_modules/
+dist/
+build/
+.next/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Test and browser artefacts
+playwright-report/
+test-results/
+
+# Local AI/tool state
+.codex/local/

@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a reproducible defect without sensitive data
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behaviour
+      description: What happened, including safe error text?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Given ...
+        2. When ...
+        3. Then ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v1.2.3 or commit SHA
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Relevant browser, runtime, operating system and configuration. Redact secrets.
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and frequency
+      description: Who is affected, how severely and how often?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitised evidence
+      description: Logs, screenshots or traces with credentials and personal data removed.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety
+      options:
+        - label: I have removed secrets, credentials and personal data.
+          required: true
+        - label: I searched for an existing report.
+          required: true

@@ -1,0 +1,56 @@
+name: Feature or change
+description: Propose a testable product or engineering outcome
+title: "[Feature]: "
+labels: ["feature"]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: Who needs what outcome, and why?
+      placeholder: As a... I want... so that...
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and evidence
+      description: Describe current behaviour, evidence and links.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Use observable Given/When/Then statements where useful.
+      placeholder: |
+        1. Given ..., when ..., then ...
+        2. Given ..., when ..., then ...
+    validations:
+      required: true
+  - type: textarea
+    id: nonfunctional
+    attributes:
+      label: Non-functional requirements
+      description: Security, privacy, performance, reliability, accessibility, compatibility and observability.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and non-goals
+      description: State what is and is not included.
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks, dependencies and rollout
+      description: Include migration, feature flag, monitoring and rollback needs.
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Readiness
+      options:
+        - label: I have removed secrets, credentials and personal data from this issue.
+          required: true
+        - label: The acceptance criteria are testable.
+          required: true

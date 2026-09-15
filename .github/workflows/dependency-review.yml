@@ -1,0 +1,22 @@
+name: Dependency review
+
+# Dependency Review is available for public repositories and for private
+# repositories with GitHub Advanced Security. Enable this workflow after
+# confirming availability, then make it a required pull-request check.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Review dependency changes
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+          deny-licenses: AGPL-1.0-only, AGPL-3.0-only
